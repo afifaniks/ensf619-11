@@ -1,0 +1,17 @@
+
+\subsection{Summary Statistics}
+\begin{table}[htbp]
+\centering
+\caption{Average CO$_2$ emissions and latency across model variants.}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Model} & \textbf{CO$_2$ Emissions (kg)} & \textbf{Latency (s)} & \textbf{Size (GB)} & \textbf{Accuracy (\%)}\\
+\midrule
+Baseline  & 0.000046 & 4.8563 & 15.903 & 100.0\\
+Quantized & 0.000031 & 3.4765 & 5.075 & 100.0\\
+Pruned    & 0.000138 & 14.4873 & 15.903 & 100.0\\
+Distilled & 0.000035 & 3.9388 & 4.672 & 80.0\\
+\bottomrule
+\end{tabular}
+\label{tab:avg_metrics}
+\end{table}

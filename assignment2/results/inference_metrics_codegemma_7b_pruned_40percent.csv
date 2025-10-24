@@ -1,0 +1,378 @@
+latency,emissions,output,run,model_size,accuracy
+15.114988417131826,0.00014079849893839627,"```python
+def find_Min_Sum(num):
+    """"""
+    Finds the minimum sum of prime factors of a number.
+
+    Args:
+        num: The number to find the minimum sum of prime factors for.
+
+    Returns:
+        The minimum sum of prime factors of num.
+
+    Examples:
+        >>> find_Min_Sum(12)
+        17
+        >>> find_Min_Sum(24)
+        7
+        >>> find_Min_Sum(25)
+        28
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```python
+def find_Min_Sum(num):
+    """"""
+    Finds the minimum sum of prime factors of a number.
+
+    Args:
+        num: The number to find the minimum sum of prime factors for.
+
+    Returns:
+        The minimum sum of prime factors of num.
+
+    Examples:
+        >>> find_Min_Sum(12)
+        17
+        >>> find_Min_Sum(24)
+        7
+        >>> find_Min_Sum(25)
+        28
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```python",1,15.902669906616211,P
+14.316349232103676,0.0001360548653602884,"```python
+def find_Min_Sum(num):
+    """"""
+    Finds the minimum sum of prime factors of a number.
+
+    Args:
+        num: The number to find the minimum sum of prime factors for.
+
+    Returns:
+        The minimum sum of prime factors of num.
+
+    Examples:
+        >>> find_Min_Sum(24)
+        10
+        >>> find_Min_Sum(15)
+        28
+        >>> find_Min_Sum(25)
+        28
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```python
+def find_Min_Sum(num):
+    """"""
+    Finds the minimum sum of prime factors of a number.
+
+    Args:
+        num: The number to find the minimum sum of prime factors for.
+
+    Returns:
+        The minimum sum of prime factors of num.
+
+    Examples:
+        >>> find_Min_Sum(24)
+        10
+        >>> find_Min_Sum(15)
+        28
+        >>> find_Min_Sum(25)
+        28
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```python
+def find_Min_Sum(num):
+    """"""
+    Finds the minimum sum of prime factors of a number.
+
+    Args:
+        num: The number to find the minimum sum of prime factors for.
+
+    Returns:
+        The minimum sum of prime factors of num.
+
+    Examples:
+        >>> find_Min_Sum(24)
+        10
+        >>> find_Min_Sum(15)
+        28
+        >>> find_Min_Sum(25)
+        28
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum +=",2,15.902669906616211,P
+14.324331638170406,0.0001367430596636799,"```python
+def find_Min_Sum(num):
+    """"""
+    Finds the minimum sum of the prime factors of a number.
+
+    Args:
+        num: The number to find the minimum sum of the prime factors of.
+
+    Returns:
+        The minimum sum of the prime factors of num.
+
+    Examples:
+        >>> find_Min_Sum(12)
+        17
+        >>> find_Min_Sum(24)
+        28
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```python
+def find_Min_Sum(num):
+    """"""
+    Finds the minimum sum of the prime factors of a number.
+
+    Args:
+        num: The number to find the minimum sum of the prime factors of.
+
+    Returns:
+        The minimum sum of the prime factors of num.
+
+    Examples:
+        >>> find_Min_Sum(12)
+        17
+        >>> find_Min_Sum(24)
+        28
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```python
+def find_Min_Sum(num):
+    """"""
+    Finds the minimum sum of the prime factors of a number.
+
+    Args:
+        num: The number to find the minimum sum of the prime factors of.
+
+    Returns:
+        The minimum sum of the prime factors of num.
+
+    Examples:
+        >>> find_Min_Sum(12)
+        17
+        >>> find_Min_Sum(24)
+        28
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```python
+def find_Min_Sum(num):
+    """"""",3,15.902669906616211,P
+14.339475689921528,0.00013802565978815253,"```python
+def find_Min_Sum(num):
+    """"""
+    Finds the minimum sum of the prime factors of a number.
+
+    Args:
+        num: The number to find the minimum sum of the prime factors of.
+
+    Returns:
+        The minimum sum of the prime factors of num.
+
+    Examples:
+        >>> find_Min_Sum(12)
+        12
+        >>> find_Min_Sum(24)
+        28
+        >>> find_Min_Sum(1)
+        1
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```python
+def find_Min_Sum(num):
+    """"""
+    Finds the minimum sum of the prime factors of a number.
+
+    Args:
+        num: The number to find the minimum sum of the prime factors of.
+
+    Returns:
+        The minimum sum of the prime factors of num.
+
+    Examples:
+        >>> find_Min_Sum(12)
+        12
+        >>> find_Min_Sum(24)
+        28
+        >>> find_Min_Sum(1)
+        1
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```python
+def find_Min_Sum(num):
+    """"""
+    Finds the minimum sum of the prime factors of a number.
+
+    Args:
+        num: The number to find the minimum sum of the prime factors of.
+
+    Returns:
+        The minimum sum of the prime factors of num.
+
+    Examples:
+        >>> find_Min_Sum(12)
+        12
+        >>> find_Min_Sum(24)
+        28
+        >>> find_Min_Sum(1)
+        1
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):",4,15.902669906616211,P
+14.341135964961722,0.00013865610445299242,"```python
+def find_Min_Sum(num):
+    """"""
+    Finds the minimum sum of the prime factors of a number.
+
+    Args:
+        num: The number to find the minimum sum of the prime factors of.
+
+    Returns:
+        The minimum sum of the prime factors of num.
+
+    Examples:
+        >>> find_Min_Sum(12)
+        15
+        >>> find_Min_Sum(24)
+        7
+        >>> find_Min_Sum(1)
+        1
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```python
+def find_Min_Sum(num):
+    """"""
+    Finds the minimum sum of the prime factors of a number.
+
+    Args:
+        num: The number to find the minimum sum of the prime factors of.
+
+    Returns:
+        The minimum sum of the prime factors of num.
+
+    Examples:
+        >>> find_Min_Sum(12)
+        15
+        >>> find_Min_Sum(24)
+        7
+        >>> find_Min_Sum(1)
+        1
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```python
+def find_Min_Sum(num):
+    """"""
+    Finds the minimum sum of the prime factors of a number.
+
+    Args:
+        num: The number to find the minimum sum of the prime factors of.
+
+    Returns:
+        The minimum sum of the prime factors of num.
+
+    Examples:
+        >>> find_Min_Sum(12)
+        15
+        >>> find_Min_Sum(24)
+        7
+        >>> find_Min_Sum(1)
+        1
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum +=",5,15.902669906616211,P

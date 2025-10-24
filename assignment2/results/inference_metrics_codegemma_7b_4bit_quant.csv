@@ -1,0 +1,135 @@
+latency,emissions,output,run,model_size,accuracy
+3.940244367113337,3.403904294704955e-05,"```python
+def find_Min_Sum(num):
+    """"""Calculates the sum of all prime factors of a number.
+
+    Args:
+        num: The number to find the sum of prime factors for.
+
+    Returns:
+        The sum of all prime factors of the input number.
+
+    Examples:
+        >>> find_Min_Sum(20)
+        7
+        >>> find_Min_Sum(100)
+        28
+        >>> find_Min_Sum(13195)
+        31
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```",1,5.074544906616211,P
+3.240046148886904,2.9404392060417153e-05,"```python
+def find_Min_Sum(num: int) -> int:
+    """"""Calculates the sum of all the prime factors of a number.
+
+    Args:
+    num: The number to find the prime factors of.
+
+    Returns:
+    The sum of all the prime factors of the number.
+
+    Examples:
+    >>> find_Min_Sum(24)
+    17
+    >>> find_Min_Sum(100)
+    29
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```",2,5.074544906616211,P
+3.5126871839165688,3.212837589797558e-05,"```python
+def find_Min_Sum(num: int) -> int:  # Google-style docstring added here
+    """"""Calculates the minimum sum of prime factors of a number.
+
+    Args:
+        num: The integer to calculate the minimum sum of prime factors for.
+
+    Returns:
+        The minimum sum of prime factors of the input number.
+
+    Examples:
+        >>> find_Min_Sum(24)
+        17
+        >>> find_Min_Sum(13)
+        13
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```",3,5.074544906616211,P
+3.5314177768304944,3.2307240399823875e-05,"```python
+def find_Min_Sum(num):
+    """"""Calculates the minimum sum of factors of a number.
+
+    Args:
+        num (int): The number to find the minimum sum of factors for.
+
+    Returns:
+        int: The minimum sum of factors for the given number.
+
+    Examples:
+        >>> find_Min_Sum(12)
+        18
+        >>> find_Min_Sum(18)
+        27
+        >>> find_Min_Sum(24)
+        36
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```",4,5.074544906616211,P
+3.158237217925489,2.8651354655791843e-05,"```python
+def find_Min_Sum(num):
+    """"""Calculates the sum of all prime factors of a number.
+
+    Args:
+        num (int): The number to factorize.
+
+    Returns:
+        int: The sum of all prime factors of the number.
+
+    Examples:
+        >>> find_Min_Sum(12)
+        17
+        >>> find_Min_Sum(24)
+        10
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```",5,5.074544906616211,P

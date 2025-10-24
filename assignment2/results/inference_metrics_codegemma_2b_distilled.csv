@@ -1,0 +1,242 @@
+latency,emissions,output,run,model_size,accuracy
+2.12134968303144,1.7801415025846925e-05,"```python
+def find_Min_Sum(num):
+    """"""Find the sum of the smallest prime factors of a given number.
+
+    Args:
+        num (int): The number to find the smallest prime factors of.
+
+    Returns:
+        int: The sum of the smallest prime factors of the given number.
+
+    Examples:
+        >>> find_Min_Sum(12)
+        7
+        >>> find_Min_Sum(13)
+        13
+    """"""
+    sum = 0
+    i = 2
+    while i * i <= num:
+        while num % i == 0:
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```",1,4.671543121337891,P
+5.201617032056674,4.663102664563031e-05,"```python
+def find_Min_Sum(num):
+    """"""
+    Find the sum of the smallest prime factors of a given number.
+
+    Args:
+        num (int): The number for which to find the smallest prime factors sum.
+
+    Returns:
+        int: The sum of the smallest prime factors of the given number.
+
+    Examples:
+        >>> find_Min_Sum(10)
+        13
+        >>> find_Min_Sum(15)
+        9
+        >>> find_Min_Sum(20)
+        17
+        >>> find_Min_Sum(25)
+        17
+        >>> find_Min_Sum(30)
+        17
+    """"""
+    sum = 0
+    i = 2
+    while i * i <= num:
+        while num % i == 0:
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```
+```python
+def find_Min_Sum(num):
+    """"""
+    Find the sum of the smallest prime factors of a given number.
+
+    Args:
+        num (int): The number for which to find the smallest prime factors sum.
+
+    Returns:
+        int: The sum of the smallest prime factors of the given number.
+
+    Examples:
+        >>> find_Min_Sum(10)
+        13
+        >>> find_Min_Sum(15)
+        9
+        >>> find_Min_Sum(20)
+        17
+        >>> find_Min_Sum(25)
+        17
+        >>> find_Min_Sum(30)
+        17
+    """"""
+    sum = 0
+    i = 2
+    while i * i <= num:
+        while num % i == 0:
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```",2,4.671543121337891,P
+1.7802429848816246,1.6239718442640725e-05,"```python
+def find_Min_Sum(num):
+    """"""Find the sum of the smallest prime factors of a given number.
+
+    Args:
+        num (int): The number for which to find the smallest prime factors.
+
+    Returns:
+        int: The sum of the smallest prime factors of the given number.
+
+    Examples:
+        >>> find_Min_Sum(10)
+        13
+        >>> find_Min_Sum(15)
+        17
+    """"""
+    sum = 0
+    i = 2
+    while i * i <= num:
+        while num % i == 0:
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```
+<|file_separator|>",3,4.671543121337891,P
+5.307928099995479,4.7606467249759674e-05,"```python
+def find_Min_Sum(num):
+    """"""Find the sum of the smallest prime factors of a number.
+
+    Args:
+        num: The number to find the smallest prime factors of.
+
+    Returns:
+        The sum of the smallest prime factors of the number.
+
+    Examples:
+        >>> find_Min_Sum(10)
+        17
+        >>> find_Min_Sum(15)
+        17
+        >>> find_Min_Sum(20)
+        17
+        >>> find_Min_Sum(25)
+        17
+        >>> find_Min_Sum(30)
+        17
+        >>> find_Min_Sum(35)
+        17
+        >>> find_Min_Sum(40)
+        17
+        >>> find_Min_Sum(45)
+        17
+        >>> find_Min_Sum(50)
+        17
+        >>> find_Min_Sum(55)
+        17
+        >>> find_Min_Sum(60)
+        17
+        >>> find_Min_Sum(65)
+        17
+        >>> find_Min_Sum(70)
+        17
+        >>> find_Min_Sum(75)
+        17
+        >>> find_Min_Sum(80)
+        17
+        >>> find_Min_Sum(85)
+        17
+        >>> find_Min_Sum(90)
+        17
+        >>> find_Min_Sum(95)
+        17
+        >>> find_Min_Sum(100)
+        17
+        >>> find_Min_Sum(105)
+        17
+        >>> find_Min_Sum(110)
+        17
+        >>> find_Min_Sum(115)
+        17
+        >>> find_Min_Sum(120)
+        17
+        >>> find_Min_Sum(125)
+        17
+        >>> find_Min_Sum(130)
+        17
+        >>> find_Min_Sum(135)
+        17
+        >>> find_Min_Sum(140)
+        17
+        >>> find_",4,4.671543121337891,F
+5.282652618829161,4.718926071133687e-05,"```python
+def find_Min_Sum(num):
+    """"""Find the sum of the smallest prime factors of a given number.
+
+    Args:
+        num (int): The number to find the smallest prime factors of.
+
+    Returns:
+        int: The sum of the smallest prime factors of the given number.
+
+    Examples:
+        >>> find_Min_Sum(10)
+        13
+        >>> find_Min_Sum(15)
+        9
+        >>> find_Min_Sum(20)
+        17
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```
+```python
+def find_Min_Sum(num):
+    """"""Find the sum of the smallest prime factors of a given number.
+
+    Args:
+        num (int): The number to find the smallest prime factors of.
+
+    Returns:
+        int: The sum of the smallest prime factors of the given number.
+
+    Examples:
+        >>> find_Min_Sum(10)
+        13
+        >>> find_Min_Sum(15)
+        9
+        >>> find_Min_Sum(20)
+        17
+    """"""
+    sum = 0
+    i = 2
+    while(i * i <= num):
+        while(num % i == 0):
+            sum += i
+            num /= i
+        i += 1
+    sum += num
+    return sum
+```",5,4.671543121337891,P

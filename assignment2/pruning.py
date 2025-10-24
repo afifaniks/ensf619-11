@@ -13,9 +13,10 @@ from transformers import (
     TrainingArguments,
 )
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "2,3"  # must be top
+os.environ["CUDA_VISIBLE_DEVICES"] = "2,3"
 MODEL = "google/codegemma-7b-it"
 OUTPUT_DIR = "./pruned_finetuned_model"
+GT_PATH = "data/data.json"
 SPARSITY = 0.4
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 MAX_LENGTH = 512
@@ -40,12 +41,10 @@ for name, module in model.named_modules():
         prune.remove(module, "weight")
 
 
-if not os.path.exists("distillation_data.json"):
-    raise FileNotFoundError(
-        "distillation_data.json not found. Prepare distillation data first."
-    )
+if not os.path.exists(GT_PATH):
+    raise FileNotFoundError(f"{GT_PATH} not found. Prepare data first.")
 
-with open("distillation_data.json", "r", encoding="utf-8") as f:
+with open(GT_PATH, "r", encoding="utf-8") as f:
     distil_data = json.load(f)
 
 

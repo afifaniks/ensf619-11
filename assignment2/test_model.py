@@ -1,25 +1,31 @@
 import os
 import time
 
+os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 import pandas as pd
 import torch
 from codecarbon import EmissionsTracker
 from datasets import load_dataset
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
-MODEL_PATH = "./pruned_finetuned_model"
+MODEL_PATH = "google/codegemma-1.1-2b"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 NUM_RUNS = 5
-CSV_FILE = "inference_metrics.csv"
+CSV_FILE = "inference_metrics_codegemma_2b_distilled.csv"
+QUANTIZE = False
 
 
-def get_model_size(path: str) -> float:
-    total_size = sum(
-        os.path.getsize(os.path.join(dp, f))
-        for dp, _, files in os.walk(path)
-        for f in files
-    )
-    return total_size / (1024**3)  # GB
+def get_quant_config():
+    if QUANTIZE:
+        return BitsAndBytesConfig(load_in_4bit=True)
+    return None
+
+
+def get_model_size(model) -> float:
+    total_size = 0
+    for param in model.parameters():
+        total_size += param.numel() * param.element_size()
+    return total_size / (1024**3)  # in GB
 
 
 def prepare_tokenizer(model_path: str):
@@ -65,7 +71,7 @@ def run_inference_once(model, tokenizer, func: str):
         gen[0][inputs["input_ids"].shape[-1] :], skip_special_tokens=True
     ).strip()
     print(f"Output Text:\n{output_text}\n")
-
+    exit()
     return {"latency": latency, "emissions": emissions, "output": output_text}
 
 
@@ -75,9 +81,14 @@ def main():
 
     tokenizer = prepare_tokenizer(MODEL_PATH)
     model = AutoModelForCausalLM.from_pretrained(
-        MODEL_PATH, torch_dtype=torch.bfloat16, device_map="auto"
+        MODEL_PATH,
+        torch_dtype=torch.bfloat16,
+        device_map="auto",
+        quantization_config=get_quant_config(),
     ).eval()
-    model_size = get_model_size(MODEL_PATH)
+    model_size = get_model_size(model)
+
+    print(f"Model size: {model_size:.3f} GB")
 
     results = []
     for run in range(1, NUM_RUNS + 1):

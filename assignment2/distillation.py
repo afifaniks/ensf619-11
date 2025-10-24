@@ -19,6 +19,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 TEACHER_MODEL = "google/codegemma-7b-it"
 STUDENT_MODEL = "google/codegemma-1.1-2b"
 OUTPUT_DIR = "./distilled"
+DISTILLATION_DATA_PATH = "data/distillation_data.json"
 DATASET_NAME = "mbpp"  # Mostly Basic Programming Problems
 MAX_SAMPLES = 500  # adjust for scale
 MAX_LENGTH = 512
@@ -86,76 +87,6 @@ print("\n" + "=" * 80)
 print("TESTING MODELS BEFORE DISTILLATION")
 print("=" * 80)
 
-# test_samples = min(2, len(dataset))
-# for i in range(test_samples):
-#     test_code = dataset[i]["code"]
-#     test_desc = dataset[i]["text"]
-
-#     # Use chat template for consistent formatting
-#     user_content = (
-#         "Add a Google-style Python docstring to the following function. "
-#         "Include Args, Returns, and Examples sections. "
-#         "Output only the updated function code. No extra text or explanation."
-#         f"\n\n{test_code}"
-#     )
-#     messages = [{"role": "user", "content": user_content}]
-
-#     teacher_prompt = teacher_tok.apply_chat_template(
-#         messages, tokenize=False, add_generation_prompt=True
-#     )
-#     student_prompt = student_tok.apply_chat_template(
-#         messages, tokenize=False, add_generation_prompt=True
-#     )
-
-#     print(f"\n{'='*80}")
-#     print(f"TEST SAMPLE {i+1}")
-#     print(f"{'='*80}")
-#     print(f"\nINPUT CODE:\n{test_code}")
-#     print(f"\nGROUND TRUTH DESCRIPTION:\n{test_desc}")
-
-#     # Test Teacher Model
-#     print(f"\n{'-'*80}")
-#     print("TEACHER MODEL OUTPUT:")
-#     print(f"{'-'*80}")
-
-#     inputs = teacher_tok(teacher_prompt, return_tensors="pt").to(DEVICE)
-#     with torch.no_grad():
-#         teacher_output = teacher.generate(
-#             **inputs,
-#             max_new_tokens=MAX_NEW_TOKENS,
-#             temperature=TEMPERATURE,
-#             do_sample=True,
-#             top_p=0.95,
-#         )
-#     teacher_text = teacher_tok.decode(
-#         teacher_output[0][inputs["input_ids"].shape[-1] :],
-#         skip_special_tokens=True,
-#     )
-#     print(teacher_text)
-
-#     # Test Untrained Student Model
-#     print(f"\n{'-'*80}")
-#     print("STUDENT MODEL - BEFORE TRAINING:")
-#     print(f"{'-'*80}")
-
-#     inputs = student_tok(student_prompt, return_tensors="pt").to(DEVICE)
-#     with torch.no_grad():
-#         student_output = student_untrained.generate(
-#             **inputs,
-#             max_new_tokens=MAX_NEW_TOKENS,
-#             temperature=TEMPERATURE,
-#             do_sample=True,
-#             top_p=0.95,
-#             pad_token_id=student_tok.eos_token_id,
-#         )
-#     student_text = student_tok.decode(
-#         student_output[0][inputs["input_ids"].shape[-1] :],
-#         skip_special_tokens=True,
-#     )
-#     print(student_text)
-#     print(f"{'='*80}\n")
-
-
 print("\n" + "=" * 80)
 print("PRE-DISTILLATION TESTING COMPLETE - Starting training preparation...")
 print("=" * 80 + "\n")
@@ -211,16 +142,16 @@ def prepare_training_example(example, tokenizer):
 
 
 # Read when distillation data already prepared
-if os.path.exists("distillation_data.json"):
+if os.path.exists(DISTILLATION_DATA_PATH):
     print("Loading existing distillation data from distillation_data.json...")
-    distil_data = json.load(open("distillation_data.json", "r", encoding="utf-8"))
+    distil_data = json.load(open(DISTILLATION_DATA_PATH, "r", encoding="utf-8"))
 else:
     # Prepare all training examples (pass tokenizer for chat template)
     distil_data = [
         prepare_training_example(ex, student_tok)
         for ex in tqdm(dataset["code"], desc="Preparing examples")
     ]
-    json.dump(distil_data, open("distillation_data.json", "w", encoding="utf-8"))
+    json.dump(distil_data, open(DISTILLATION_DATA_PATH, "w", encoding="utf-8"))
 
 
 print("\n" + "=" * 80)
@@ -319,4 +250,4 @@ trainer.train()
 print("Saving distilled model...")
 trainer.save_model(OUTPUT_DIR)
 student_tok.save_pretrained(OUTPUT_DIR)
-print("✅ Distillation complete. Saved to:", OUTPUT_DIR)
+print("Distillation complete. Saved to:", OUTPUT_DIR)
